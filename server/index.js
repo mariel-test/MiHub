@@ -10,7 +10,7 @@ const app = express()
 app.use(helmet())
 
 app.use(cors({
-  origin: process.env.CLIENT_ORIGIN,
+  origin: 'https://mi-hub-one.vercel.app', // process.env.CLIENT_ORIGIN
   credentials: true,
 }))
 
