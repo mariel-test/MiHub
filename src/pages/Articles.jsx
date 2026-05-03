@@ -22,7 +22,7 @@ export default function Articles() {
         {articles.length === 0 ? (
           <div style={s.empty}>
             <p style={s.emptyTitle}>Todavía no hay artículos</p>
-            <p style={s.emptyNote}>Usá la página de Edición para crear tu primer post.</p>
+            <p style={s.emptyNote}>Próximamente.</p>
           </div>
         ) : (
           <div style={s.grid}>

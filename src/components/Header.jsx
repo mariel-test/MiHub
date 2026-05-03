@@ -7,7 +7,6 @@ const NAV = [
   { label: 'Presentacion', to: '/' },
   { label: 'Perfil', to: '/perfil' },
   { label: 'Articulos', to: '/articulos' },
-  { label: 'Edicion', to: '/edicion' },
 ]
 
 export default function Header() {
