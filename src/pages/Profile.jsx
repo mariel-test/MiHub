@@ -207,7 +207,7 @@ function Section({ title, children }) {
 }
 
 const sectionTitle = {
-  fontSize: '1rem',
+  fontSize: '1.2rem',
   fontWeight: 700,
   letterSpacing: '0.15em',
   textTransform: 'uppercase',

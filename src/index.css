@@ -47,7 +47,7 @@ button { cursor: pointer; }
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
-  padding: 48px 64px 40px;
+  padding: 28px 48px 12px;
 }
 
 /* ── Responsive ── */
@@ -56,16 +56,16 @@ button { cursor: pointer; }
 @media (max-width: 900px) {
   html { font-size: 18px; }
 
-  .page-content { padding: 40px 32px 32px; }
-  .header-inner { padding-left: 32px !important; padding-right: 32px !important; }
-  .footer-inner { padding-left: 32px !important; padding-right: 32px !important; }
+  .page-content { padding: 20px 24px 8px; }
+  .header-inner { padding-left: 24px !important; padding-right: 24px !important; }
+  .footer-inner { padding-left: 24px !important; padding-right: 24px !important; }
 }
 
 /* Mobile */
 @media (max-width: 640px) {
   html { font-size: 17px; }
 
-  .page-content { padding: 32px 20px 24px; }
+  .page-content { padding: 18px 16px 8px; }
 
   /* Header badge shorter on mobile */
   .header-badge { font-size: 10px !important; padding: 4px 10px !important; }
@@ -100,7 +100,7 @@ button { cursor: pointer; }
 /* Very small phones */
 @media (max-width: 380px) {
   html { font-size: 16px; }
-  .page-content { padding: 24px 14px 20px; }
+  .page-content { padding: 14px 12px 6px; }
 }
 
 /* ── MDX Prose — tipografía igual a Presentación y Perfil ── */
@@ -114,7 +114,7 @@ button { cursor: pointer; }
 
 /* h2 = sectionTitle de Perfil: uppercase, #888, border-bottom */
 .mdx-prose h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;

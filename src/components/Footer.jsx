@@ -33,7 +33,7 @@ export default function Footer({ prev, next, center }) {
 const styles = {
   footer: {
     borderTop: '1px solid #ffffff22',
-    marginTop: 64,
+    marginTop: 24,
     padding: '20px 0',
   },
   inner: {
