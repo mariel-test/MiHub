@@ -5,7 +5,6 @@ description: Un recorrido por las herramientas y estrategias de automatización 
 tags: [QA, IA, Automatización, Playwright]
 ---
 
-import Carousel from '../components/Carousel'
 import PdfViewer from '../components/PdfViewer'
 
 ## Introducción
@@ -62,12 +61,6 @@ def authenticated_page(page):
 def test_dashboard_loads(authenticated_page):
     assert authenticated_page.title() == "Dashboard"
 ```
-
-## Galería
-
-<Carousel items={[
-  { src: '/foto.jpeg', caption: 'Presentación en comunidad de QA — Buenos Aires, 2025' },
-]} />
 
 ## Resultados medibles
 
