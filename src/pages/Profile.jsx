@@ -112,7 +112,7 @@ export default function Profile() {
               <span>Argentina · Open to Remote</span>
             </div>
           </div>
-          <PhotoOrInitials size={100} />
+          <PhotoOrInitials size={140} />
         </div>
 
         {/* Summary */}
