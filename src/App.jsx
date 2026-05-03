@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Articles from './pages/Articles'
+import ArticlePage from './pages/ArticlePage'
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/perfil" element={<Profile />} />
         <Route path="/articulos" element={<Articles />} />
+        <Route path="/articulos/:slug" element={<ArticlePage />} />
       </Routes>
     </BrowserRouter>
   )

@@ -1,0 +1,101 @@
+---
+title: Automatización con IA aplicada al QA
+date: 2026-05-03
+description: Un recorrido por las herramientas y estrategias de automatización de testing con inteligencia artificial que estoy explorando y aplicando en proyectos reales.
+tags: [QA, IA, Automatización, Playwright]
+---
+
+import Carousel from '../components/Carousel'
+import PdfViewer from '../components/PdfViewer'
+
+## Introducción
+
+La automatización de pruebas con inteligencia artificial está cambiando la forma en que los equipos de QA trabajan. En este artículo comparto mi experiencia acumulada en más de 10 años en testing y cómo las herramientas actuales permiten hacer más con menos.
+
+El rol del QA Automation Engineer evolucionó: ya no se trata solo de escribir scripts, sino de **diseñar sistemas de calidad** que se adapten, aprendan y alerten antes de que los problemas lleguen a producción.
+
+## ¿Qué es el QA asistido por IA?
+
+El **Quality Assurance asistido por IA** combina varias capacidades:
+
+- Generación automática de casos de prueba a partir de código o especificaciones
+- Análisis predictivo de áreas de mayor riesgo de defectos
+- *Self-healing selectors* que se adaptan a cambios de UI sin romper los tests
+- Revisión automática de cobertura y detección de tests redundantes
+
+> Las herramientas de IA no reemplazan al tester. Amplían su capacidad de encontrar y prevenir defectos donde antes no llegaba el tiempo.
+
+## Stack tecnológico que uso
+
+### Playwright + Python
+
+Playwright es mi herramienta principal para automatización E2E. Corre en Chromium, Firefox y WebKit, y tiene soporte nativo para async/await.
+
+```python
+from playwright.sync_api import sync_playwright
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=True)
+    page = browser.new_page()
+    page.goto("https://mi-app.com")
+    page.get_by_role("button", name="Iniciar sesión").click()
+    page.get_by_label("Usuario").fill("mariel@example.com")
+    page.screenshot(path="evidencia.png")
+    browser.close()
+```
+
+### pytest para organización de suites
+
+Uso `pytest` con fixtures reutilizables, markers por criticidad, y reportes en HTML y Allure.
+
+```python
+import pytest
+
+@pytest.fixture
+def authenticated_page(page):
+    page.goto("/login")
+    page.fill("#email", "test@example.com")
+    page.fill("#password", "secret")
+    page.click("button[type=submit]")
+    return page
+
+def test_dashboard_loads(authenticated_page):
+    assert authenticated_page.title() == "Dashboard"
+```
+
+## Galería
+
+<Carousel items={[
+  { src: '/foto.jpeg', caption: 'Presentación en comunidad de QA — Buenos Aires, 2025' },
+]} />
+
+## Resultados medibles
+
+Estos son los resultados concretos que logré en proyectos donde apliqué este stack:
+
+| Métrica | Antes | Después |
+|---------|-------|---------|
+| Defectos en producción | Línea base | −60% |
+| Cobertura de regresión | 40% | 95% |
+| Tiempo de ejecución de suite | 4 hs | 45 min |
+| Deuda técnica de tests | Alta | Baja |
+
+## Visor de documento
+
+Podés subir tus PDFs a `public/docs/` y mostrarlos así:
+
+```mdx
+<PdfViewer src="/docs/mi-informe.pdf" title="Informe de calidad Q1 2026" />
+```
+
+El componente incluye un enlace para abrir en nueva pestaña y alto configurable.
+
+## Recursos recomendados
+
+1. [Playwright Docs](https://playwright.dev/python/) — documentación oficial con ejemplos
+2. [pytest](https://docs.pytest.org) — framework de testing para Python
+3. Testing con IA generativa: usar LLMs para generar casos de prueba desde user stories
+
+---
+
+*Publicado por Mariel Ferreyra · Senior QA Engineering Automation · AI Assisted*
